@@ -1,0 +1,102 @@
+{
+  "title": "Student Grade Prediction: Early Support Risk Classification",
+  "dataset": "UCI Student Performance (mathematics subject)",
+  "records": 395,
+  "features_used": [
+    "studytime",
+    "failures",
+    "schoolsup",
+    "famsup",
+    "paid",
+    "activities",
+    "higher",
+    "internet",
+    "absences",
+    "traveltime",
+    "freetime",
+    "goout",
+    "Dalc",
+    "Walc",
+    "health"
+  ],
+  "target_definition": "At risk/fail = final math grade G3 below 10 out of 20",
+  "excluded_from_features": [
+    "G1",
+    "G2",
+    "G3",
+    "student demographics"
+  ],
+  "split": {
+    "train_rows": 316,
+    "test_rows": 79,
+    "random_seed": 42,
+    "test_fraction": 0.2
+  },
+  "class_counts": {
+    "at_risk_fail": 130,
+    "not_at_risk_pass": 265
+  },
+  "baseline_majority_class": "not_at_risk/pass",
+  "baseline_metrics": {
+    "accuracy": 0.6708860759493671,
+    "balanced_accuracy": 0.5,
+    "precision_at_risk": 0.0,
+    "recall_at_risk": 0.0,
+    "f1_at_risk": 0.0,
+    "confusion_matrix": {
+      "true_negative": 53,
+      "false_positive": 0,
+      "false_negative": 26,
+      "true_positive": 0
+    }
+  },
+  "model": "Class-balanced L2 logistic regression (gradient descent)",
+  "model_metrics": {
+    "accuracy": 0.6455696202531646,
+    "balanced_accuracy": 0.5986937590711175,
+    "precision_at_risk": 0.46153846153846156,
+    "recall_at_risk": 0.46153846153846156,
+    "f1_at_risk": 0.46153846153846156,
+    "confusion_matrix": {
+      "true_negative": 39,
+      "false_positive": 14,
+      "false_negative": 14,
+      "true_positive": 12
+    }
+  },
+  "largest_standardized_coefficients": [
+    {
+      "feature": "failures",
+      "coefficient": 0.7105217207242216
+    },
+    {
+      "feature": "goout",
+      "coefficient": 0.48330161935680405
+    },
+    {
+      "feature": "Dalc",
+      "coefficient": -0.20958874712067405
+    },
+    {
+      "feature": "traveltime",
+      "coefficient": 0.18516092990889083
+    },
+    {
+      "feature": "health",
+      "coefficient": 0.15389697567071936
+    },
+    {
+      "feature": "higher_yes",
+      "coefficient": -0.1407497768951037
+    },
+    {
+      "feature": "higher_no",
+      "coefficient": 0.1407497768951037
+    },
+    {
+      "feature": "freetime",
+      "coefficient": -0.12905735220417727
+    }
+  ],
+  "caveat": "Small observational dataset; results do not establish cause or support decisions about individual students."
+}
